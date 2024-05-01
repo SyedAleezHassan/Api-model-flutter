@@ -20,11 +20,11 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
-                itemCount: 1,
+                itemCount: samplePosts.length,
                 itemBuilder: (context, index) {
                   return Container(
                     height: 130,
-                    color: Colors.grey,
+                    color: const Color.fromARGB(255, 63, 7, 7),
                     padding: const EdgeInsets.all(3),
                     margin: const EdgeInsets.all(5),
                     child: Column(
@@ -33,20 +33,21 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Text(
                           'user Id :${samplePosts[index].userId}',
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18,color: Colors.white),
+                          
                         ),
                         Text(
                           'Id :${samplePosts[index].id}',
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18,color: Colors.white),
                         ),
                         Text(
                           'Title :${samplePosts[index].title}',
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18,color: Colors.white),
                           maxLines: 1,
                         ),
                         Text(
                           'Body :${samplePosts[index].body} ',
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18,color: Colors.white),
                           maxLines: 1,
                         ),
                       ],
