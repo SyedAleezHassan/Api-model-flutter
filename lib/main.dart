@@ -17,9 +17,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 190, 189, 192),
+        backgroundColor: Color.fromARGB(255, 234, 133, 156),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 235, 218, 209),
+          backgroundColor: Color.fromARGB(255, 245, 211, 209),
           title: Text(
             "Data Fetch Using Model",
             style: TextStyle(fontWeight: FontWeight.bold),
