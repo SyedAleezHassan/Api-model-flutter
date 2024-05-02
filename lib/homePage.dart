@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:covid_track_app/model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -72,7 +73,9 @@ class _HomePageState extends State<HomePage> {
                     itemCount: samplePosts.length,
                     itemBuilder: (context, index) {
                       return Container(
-                        height: 130,
+                        height: 330,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4)),
                         color: Color.fromARGB(255, 167, 4, 4),
                         padding: const EdgeInsets.all(3),
                         margin: const EdgeInsets.all(5),
@@ -81,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'user Id :${samplePosts[index].userId}',
+                              'Updates :${samplePosts[index].updated}',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -89,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Text(
-                              'Id :${samplePosts[index].id}',
+                              'Country :${samplePosts[index].country}',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -97,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Text(
-                              'Title :${samplePosts[index].title}',
+                              'countryInfo :${samplePosts[index].countryInfo}',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -106,7 +109,187 @@ class _HomePageState extends State<HomePage> {
                               maxLines: 1,
                             ),
                             Text(
-                              'Body :${samplePosts[index].body} ',
+                              'cases :${samplePosts[index].cases} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'todayCases :${samplePosts[index].todayCases} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'deaths :${samplePosts[index].deaths} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'todayDeaths :${samplePosts[index].todayDeaths} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'recovered :${samplePosts[index].recovered} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'todayRecovered :${samplePosts[index].todayRecovered} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'active :${samplePosts[index].active} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'critical :${samplePosts[index].critical} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'casesPerOneMillion :${samplePosts[index].casesPerOneMillion} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'deathsPerOneMillion :${samplePosts[index].deathsPerOneMillion} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'tests :${samplePosts[index].tests} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'testsPerOneMillion :${samplePosts[index].testsPerOneMillion} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'cases :${samplePosts[index].cases} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'population :${samplePosts[index].population} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'continent :${samplePosts[index].continent} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'oneCasePerPeople :${samplePosts[index].oneCasePerPeople} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'oneDeathPerPeople :${samplePosts[index].oneDeathPerPeople} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'oneTestPerPeople :${samplePosts[index].oneTestPerPeople} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'activePerOneMillion :${samplePosts[index].activePerOneMillion} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'recoveredPerOneMillion :${samplePosts[index].recoveredPerOneMillion} ',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                            ),
+                            Text(
+                              'criticalPerOneMillion :${samplePosts[index].criticalPerOneMillion} ',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -121,7 +304,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 } else {
                   return const Center(
-                    child: CircularProgressIndicator(),
+                    child: Text("no data found"),
                   );
                 }
               },
@@ -135,7 +318,7 @@ class _HomePageState extends State<HomePage> {
   Future<List<SamplePosts>> getData() async {
     final response = await http.get(
       Uri.parse(
-        'https://jsonplaceholder.typicode.com/posts',
+        'https://disease.sh/v3/covid-19/countries',
       ),
     );
     var data = jsonDecode(response.body.toString());
